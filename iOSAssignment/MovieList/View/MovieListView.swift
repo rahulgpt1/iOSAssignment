@@ -20,6 +20,7 @@ struct MovieListView: View {
                 .navigationTitle("Movies")
         }
         .onAppear {
+            // Removed unsafe nil unwrap that caused a crash in earlier versions.
             Task {
                 await self.viewModel.fetchData()
             }
